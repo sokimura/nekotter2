@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>新規投稿フォーム</title>
+  </head>
+  <body>
+    <header>
+      <h1><%= link_to "ねこったー", root_path %></h1>
+    </header>
+    <div class="contents">
+      <h2>投稿する</h2>
+      <%= form_for(@tweet) do |f| %>
+        <%= image_tag 'cat1.png' %>
+        <div class="input-box">
+          <%= f.text_area :text, placeholder: "つぶやこう", rows: "8", cols: "40" %>
+        </div>
+        <div class="button-box">
+          <%= f.submit "送信", class: "submit-button" %>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>
